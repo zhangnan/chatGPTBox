@@ -57,6 +57,9 @@ export const chatgptApiModelKeys = [
   'chatgptApi4_128k_preview',
   'chatgptApi4_128k_1106_preview',
   'chatgptApi4_128k_0125_preview',
+  'chatgptApi4_1',
+  'chatgptApi4_1_mini',
+  'chatgptApi4_1_nano',
 ]
 export const customApiModelKeys = ['customModel']
 export const ollamaApiModelKeys = ['ollamaModel']
@@ -197,6 +200,10 @@ export const Models = {
     desc: 'ChatGPT (GPT-4-Turbo 128k 0125 Preview)',
   },
   chatgptApi4oLatest: { value: 'chatgpt-4o-latest', desc: 'ChatGPT (ChatGPT-4o latest)' },
+
+  chatgptApi4_1: { value: 'gpt-4.1', desc: 'ChatGPT (GPT-4.1)' },
+  chatgptApi4_1_mini: { value: 'gpt-4.1-mini', desc: 'ChatGPT (GPT-4.1 mini)' },
+  chatgptApi4_1_nano: { value: 'gpt-4.1-nano', desc: 'ChatGPT (GPT-4.1 nano)' },
 
   claude2WebFree: { value: '', desc: 'Claude.ai (Web)' },
   claude12Api: { value: 'claude-instant-1.2', desc: 'Claude.ai (API, Claude Instant 1.2)' },
