@@ -195,17 +195,17 @@ async function prepareForSelectionTools() {
         let position
 
         const config = await getUserConfig()
-        if (!config.selectionToolsNextToInputBox) position = { x: e.pageX + 20, y: e.pageY + 20 }
+        if (!config.selectionToolsNextToInputBox) position = { x: e.pageX + config.selectionToolsMouseOffsetX, y: e.pageY + config.selectionToolsMouseOffsetY }
         else {
           const inputElement = selectionElement.querySelector('input, textarea')
           if (inputElement) {
             position = getClientPosition(inputElement)
             position = {
-              x: position.x + window.scrollX + inputElement.offsetWidth + 50,
-              y: e.pageY + 30,
+              x: position.x + window.scrollX + inputElement.offsetWidth + config.selectionToolsInputBoxOffsetX,
+              y: e.pageY + config.selectionToolsInputBoxOffsetY,
             }
           } else {
-            position = { x: e.pageX + 20, y: e.pageY + 20 }
+            position = { x: e.pageX + config.selectionToolsMouseOffsetX, y: e.pageY + config.selectionToolsMouseOffsetY }
           }
         }
         toolbarContainer = createElementAtPosition(position.x, position.y)
@@ -242,16 +242,17 @@ async function prepareForSelectionToolsTouch() {
       return
 
     deleteToolbar()
-    setTimeout(() => {
+    setTimeout(async () => {
       const selection = window
         .getSelection()
         ?.toString()
         .trim()
         .replace(/^-+|-+$/g, '')
       if (selection) {
+        const config = await getUserConfig()
         toolbarContainer = createElementAtPosition(
-          e.changedTouches[0].pageX + 20,
-          e.changedTouches[0].pageY + 20,
+          e.changedTouches[0].pageX + config.selectionToolsTouchOffsetX,
+          e.changedTouches[0].pageY + config.selectionToolsTouchOffsetY,
         )
         createSelectionTools(toolbarContainer, selection)
       }

@@ -563,6 +563,96 @@ export function GeneralPart({ config, updateConfig, setTabIndex }) {
         />
         {t('Display selection tools next to input box to avoid blocking')}
       </label>
+      
+      <div style={{ marginLeft: '20px', marginTop: '10px' }}>
+        <div style={{ marginBottom: '8px', fontWeight: 'bold' }}>
+          {t('Selection Tools Position Offset')}
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '10px' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            {t('Mouse X Offset')}:
+            <input
+              type="number"
+              value={config.selectionToolsMouseOffsetX}
+              min="0"
+              max="200"
+              style={{ width: '60px' }}
+              onChange={(e) => {
+                updateConfig({ selectionToolsMouseOffsetX: parseInt(e.target.value) || 0 })
+              }}
+            />
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            {t('Mouse Y Offset')}:
+            <input
+              type="number"
+              value={config.selectionToolsMouseOffsetY}
+              min="0"
+              max="200"
+              style={{ width: '60px' }}
+              onChange={(e) => {
+                updateConfig({ selectionToolsMouseOffsetY: parseInt(e.target.value) || 0 })
+              }}
+            />
+          </label>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '10px' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            {t('Input Box X Offset')}:
+            <input
+              type="number"
+              value={config.selectionToolsInputBoxOffsetX}
+              min="0"
+              max="200"
+              style={{ width: '60px' }}
+              onChange={(e) => {
+                updateConfig({ selectionToolsInputBoxOffsetX: parseInt(e.target.value) || 0 })
+              }}
+            />
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            {t('Input Box Y Offset')}:
+            <input
+              type="number"
+              value={config.selectionToolsInputBoxOffsetY}
+              min="0"
+              max="200"
+              style={{ width: '60px' }}
+              onChange={(e) => {
+                updateConfig({ selectionToolsInputBoxOffsetY: parseInt(e.target.value) || 0 })
+              }}
+            />
+          </label>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            {t('Touch X Offset')}:
+            <input
+              type="number"
+              value={config.selectionToolsTouchOffsetX}
+              min="0"
+              max="200"
+              style={{ width: '60px' }}
+              onChange={(e) => {
+                updateConfig({ selectionToolsTouchOffsetX: parseInt(e.target.value) || 0 })
+              }}
+            />
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            {t('Touch Y Offset')}:
+            <input
+              type="number"
+              value={config.selectionToolsTouchOffsetY}
+              min="0"
+              max="200"
+              style={{ width: '60px' }}
+              onChange={(e) => {
+                updateConfig({ selectionToolsTouchOffsetY: parseInt(e.target.value) || 0 })
+              }}
+            />
+          </label>
+        </div>
+      </div>
       <label>
         <input
           type="checkbox"

@@ -333,6 +333,14 @@ export const defaultConfig = {
   alwaysPinWindow: false,
   focusAfterAnswer: true,
 
+  // selection tools positioning
+  selectionToolsMouseOffsetX: 20,
+  selectionToolsMouseOffsetY: 20,
+  selectionToolsInputBoxOffsetX: 50,
+  selectionToolsInputBoxOffsetY: 30,
+  selectionToolsTouchOffsetX: 20,
+  selectionToolsTouchOffsetY: 20,
+
   apiKey: '', // openai ApiKey
 
   azureApiKey: '',
